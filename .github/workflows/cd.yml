@@ -301,7 +301,7 @@ jobs:
             python: '3.11'
             python-manylinux-tag: "cp311-cp311"
           - os: ubuntu-latest
-            python: '3.11'
+            python: '3.12'
             python-manylinux-tag: "cp312-cp312"
 
           # MacOS emulated
