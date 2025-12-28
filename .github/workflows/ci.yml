@@ -441,7 +441,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install setuptools wheel
-          pip install git+https://github.com/jina-ai/setuptools-golang.git@feat-align-with-alaeddine-code
+          pip install git+https://github.com/kingjan1999/setuptools-golang.git@feat-align-with-alaeddine-code
           pip install cibuildwheel
 
       - name: Build wheels with setuptools-golang-build-manylinux-wheel
@@ -521,7 +521,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install setuptools wheel
-          pip install git+https://github.com/jina-ai/setuptools-golang.git@feat-align-with-alaeddine-code
+          pip install git+https://github.com/kingjan1999/setuptools-golang.git@feat-align-with-alaeddine-code
           pip install cibuildwheel
 
       - name: Build wheels with setuptools-golang-build-manylinux-wheel
@@ -658,7 +658,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install setuptools wheel
-          pip install git+https://github.com/jina-ai/setuptools-golang.git@feat-align-with-alaeddine-code
+          pip install git+https://github.com/kingjan1999/setuptools-golang.git@feat-align-with-alaeddine-code
           pip install cibuildwheel
 
       - name: Build wheels with setuptools-golang-build-manylinux-wheel
@@ -709,7 +709,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install setuptools wheel
-          pip install git+https://github.com/jina-ai/setuptools-golang.git@feat-align-with-alaeddine-code
+          pip install git+https://github.com/kingjan1999/setuptools-golang.git@feat-align-with-alaeddine-code
           pip install cibuildwheel
 
       - name: Build wheels with setuptools-golang-build-manylinux-wheel

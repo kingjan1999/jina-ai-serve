@@ -2,9 +2,10 @@ from __future__ import annotations
 import os
 from docarray import BaseDoc
 from docarray import DocList
+from docarray.base_doc import AnyDoc
 
 from pydantic import Field
-from typing import Any, Dict, Optional, List, Union
+from typing import Any, Optional, Union
 
 from docarray.typing import ID, AnyEmbedding, AnyTensor
 docarray_v2 = True
@@ -43,11 +44,11 @@ class LegacyDocumentJina(BaseDoc):
     )
 
     tensor: Optional[AnyTensor] = None
-    chunks: Optional[Union[DocList[LegacyDocumentJina], List[LegacyDocumentJina]]] = None
-    matches: Optional[Union[DocList[LegacyDocumentJina], List[LegacyDocumentJina]]] = None
+    chunks: Optional[Union[DocList[AnyDoc], list[LegacyDocumentJina]]] = None
+    matches: Optional[Union[DocList[AnyDoc], list[LegacyDocumentJina]]] = None
     blob: Optional[bytes] = None
     text: Optional[str] = None
     url: Optional[str] = None
     embedding: Optional[AnyEmbedding] = None
-    tags: Dict[str, Any] = dict()
-    scores: Optional[Dict[str, Any]] = None
+    tags: dict[str, Any] = dict()
+    scores: Optional[dict[str, Any]] = None
