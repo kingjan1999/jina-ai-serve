@@ -13,7 +13,7 @@ jobs:
   prep-testbed:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.5.0
+      - uses: actions/checkout@v5
       - id: set-matrix
         run: |
           sudo apt-get install jq
@@ -31,7 +31,7 @@ jobs:
         python-version: [3.9, 3.10]
         test-path: ${{fromJson(needs.prep-testbed.outputs.windows)}}
     steps:
-      - uses: actions/checkout@v2.5.0
+      - uses: actions/checkout@v5
         with:
           ref: ${{ github.event.inputs.branch }}
       - name: Set up Python ${{ matrix.python-version }}
@@ -78,7 +78,7 @@ jobs:
     strategy:
       fail-fast: false
     steps:
-      - uses: actions/checkout@v2.5.0
+      - uses: actions/checkout@v5
       - name: Set up Python 3.9
         uses: actions/setup-python@v4
         with:
