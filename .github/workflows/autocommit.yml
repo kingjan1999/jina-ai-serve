@@ -23,7 +23,7 @@ jobs:
           git config --local user.name "Jina Dev Bot"
       - uses: actions/setup-python@v4
         with:
-          python-version: 3.7
+          python-version: 3.9
       - name: Generate TOC
         uses: technote-space/toc-generator@v3
         with:

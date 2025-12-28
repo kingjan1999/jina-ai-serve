@@ -31,11 +31,11 @@ outputs:
         - jina --version
     requirements:
       host:
-        - python >=3.7
+        - python >=3.9
         - pip
       run:
         - __unix
-        - python >=3.7
+        - python >=3.9
         - docarray >=0.16.4
         - grpcio >=1.46.0,<1.48.1
         - grpcio-health-checking >=1.46.0,<1.48.1
@@ -65,11 +65,11 @@ outputs:
         - JINA_PIP_INSTALL_PERF=1
     requirements:
       host:
-        - python >=3.7
+        - python >=3.9
         - pip
       run:
         - __unix
-        - python >=3.7
+        - python >=3.9
         - docarray >=0.16.4
         - grpcio >=1.46.0,<1.48.1
         - grpcio-health-checking >=1.46.0,<1.48.1
@@ -104,11 +104,11 @@ outputs:
       script: python -m pip install . --no-deps -vv
     requirements:
       host:
-        - python >=3.7
+        - python >=3.9
         - pip
       run:
         - __unix
-        - python >=3.7
+        - python >=3.9
         - aiofiles
         - aiohttp
         - aiostream

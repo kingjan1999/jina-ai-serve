@@ -13,7 +13,7 @@ Take our **[user experience survey](https://10sw1tcpld4.typeform.com/to/EGAEReM7
 
 ## Install
 
-Make sure that you have Python 3.7+ installed on Linux/macOS/{ref}`Windows <jina-on-windows>`.
+Make sure that you have Python 3.9+ installed on Linux/macOS/{ref}`Windows <jina-on-windows>`.
 
 ````{tab} via PyPI
 ```shell

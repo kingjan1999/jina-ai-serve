@@ -154,8 +154,8 @@ recipe_object = {
             'build': build_object_core,
             'test': test_object,
             'requirements': {
-                'host': ['python >=3.7', 'pip'],
-                'run': ['__unix', 'python >=3.7'] + reqs['core'],
+                'host': ['python >=3.9', 'pip'],
+                'run': ['__unix', 'python >=3.9'] + reqs['core'],
             },
         },
         {
@@ -163,8 +163,8 @@ recipe_object = {
             'test': test_object,
             'build': build_object_perf,
             'requirements': {
-                'host': ['python >=3.7', 'pip'],
-                'run': ['__unix', 'python >=3.7'] + reqs['perf'],
+                'host': ['python >=3.9', 'pip'],
+                'run': ['__unix', 'python >=3.9'] + reqs['perf'],
             },
         },
         {
@@ -172,8 +172,8 @@ recipe_object = {
             'test': test_object,
             'build': build_object_standard,
             'requirements': {
-                'host': ['python >=3.7', 'pip'],
-                'run': ['__unix', 'python >=3.7'] + reqs['standard'],
+                'host': ['python >=3.9', 'pip'],
+                'run': ['__unix', 'python >=3.9'] + reqs['standard'],
             },
         },
     ],

@@ -13,7 +13,7 @@ go get
 A copy of the Jina library is placed under the `jina-core` folder. 
 - Create a virtual environment with pipenv: 
 ```shell
-pipenv --python 3.7
+pipenv --python 3.9
 ```
 - Install Jina in the virtual environment:
 ```shell

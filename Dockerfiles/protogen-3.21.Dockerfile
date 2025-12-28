@@ -1,11 +1,11 @@
-FROM --platform=linux/amd64 python:3.7-slim
+FROM --platform=linux/amd64 python:3.12-slim
 
 RUN apt-get update && apt-get install --no-install-recommends -y
 
 WORKDIR /builder/
 
 RUN apt-get install --no-install-recommends -y build-essential git autoconf libtool wget unzip zlib1g-dev pkg-config cmake
-RUN wget https://github.com/protocolbuffers/protobuf/releases/download/v21.5/protoc-21.5-linux-x86_64.zip  -O protobuf.zip \
+RUN wget https://github.com/protocolbuffers/protobuf/releases/download/v33.2/protoc-33.2-linux-x86_64.zip  -O protobuf.zip \
     && unzip protobuf.zip && rm protobuf.zip && \
     cp bin/protoc /usr/local/bin/ && \
     cp -r include/* /usr/local/include/ && \

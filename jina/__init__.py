@@ -15,8 +15,8 @@ import warnings as _warnings
 
 import docarray as _docarray
 
-if _sys.version_info < (3, 7, 0):
-    raise OSError(f'Jina requires Python >= 3.7, but yours is {_sys.version_info}')
+if _sys.version_info < (3, 9, 0):
+    raise OSError(f'Jina requires Python >= 3.9, but yours is {_sys.version_info}')
 
 
 def _warning_on_one_line(message, category, filename, lineno, *args, **kwargs):
