@@ -155,7 +155,7 @@ linkcheck_ignore = [
     'pods/encode.yml',
     'https://github.com/jina-ai/jina/commit/*',
     '.github/*',
-    'extra-requirements.txt',
+    'pyproject.toml',
     'fastentrypoints.py' '../../101',
     '../../102',
     'http://www.twinsun.com/tz/tz-link.htm',  # Broken link from pytz library

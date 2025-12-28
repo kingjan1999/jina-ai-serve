@@ -55,7 +55,7 @@ class ImportExtensions:
         ) as fp:
             for v in fp:
                 if self._check_v(v, missing_module):
-                    missing_module, install_tags = v.split(':')
+                    missing_module, install_tags = v.split(': ')
                     self._tags.append(missing_module)
                     self._tags.extend(vv.strip() for vv in install_tags.split(','))
                     break

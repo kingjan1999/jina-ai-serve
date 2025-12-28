@@ -35,8 +35,8 @@ ENV PIP_NO_CACHE_DIR=1 \
     JINA_PIP_INSTALL_CORE=${PIP_INSTALL_CORE} \
     JINA_PIP_INSTALL_PERF=${PIP_INSTALL_PERF}
 
-# change on extra-requirements.txt, setup.py will invalid the cache
-COPY extra-requirements.txt setup.py /tmp/
+# change on pyproject.toml, setup.py will invalid the cache
+COPY pyproject.toml /tmp/
 
 
 RUN cd /tmp/ && \

@@ -7,8 +7,7 @@ area/testing:
   - tests/**/*
 
 area/setup:
-  - setup.py
-  - extra-requirements.txt
+  - pyproject.toml
   - requirements.txt
   - MANIFEST.in
   - fastentrypoints.py

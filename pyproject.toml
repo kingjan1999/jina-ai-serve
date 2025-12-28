@@ -1,3 +1,262 @@
 [build-system]
-requires = ["setuptools>=18.0", "wheel"]
+requires = ["setuptools>=61.0", "wheel", "setuptools-golang"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "jina"
+description = "Multimodal AI services & pipelines with cloud-native stack: gRPC, Kubernetes, Docker, OpenTelemetry, Prometheus, Jaeger, etc."
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Jina AI", email = "hello@jina.ai" }]
+classifiers = [
+	"Development Status :: 5 - Production/Stable",
+	"Intended Audience :: Developers",
+	"Intended Audience :: Education",
+	"Intended Audience :: Science/Research",
+	"Programming Language :: Python :: 3.9",
+	"Programming Language :: Python :: 3.10",
+	"Programming Language :: Python :: 3.11",
+	"Programming Language :: Python :: 3.12",
+	"Programming Language :: Unix Shell",
+	"Environment :: Console",
+	"License :: OSI Approved :: Apache Software License",
+	"Operating System :: OS Independent",
+	"Topic :: Database :: Database Engines/Servers",
+	"Topic :: Scientific/Engineering :: Artificial Intelligence",
+	"Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+	"Topic :: Scientific/Engineering :: Image Recognition",
+	"Topic :: Multimedia :: Video",
+	"Topic :: Scientific/Engineering",
+	"Topic :: Scientific/Engineering :: Mathematics",
+	"Topic :: Software Development",
+	"Topic :: Software Development :: Libraries",
+	"Topic :: Software Development :: Libraries :: Python Modules",
+]
+keywords = [
+	"jina", "cloud-native", "multimodal", "cross-modal", "neural-search",
+	"embedding", "serving", "grpc", "kubernetes", "docker",
+	"opentelemetry", "prometheus", "jaeger",
+]
+
+# Version is sourced dynamically from jina/__init__.py (__version__)
+dynamic = ["version"]
+
+dependencies = [
+	# core
+	"numpy",
+	"protobuf>=3.19.0",
+	"grpcio>=1.46.0,<=1.73.1",
+	"grpcio-reflection>=1.46.0,<=1.73.1",
+	"grpcio-health-checking>=1.46.0,<=1.73.1",
+	"pyyaml>=5.3.1",
+	"packaging>=20.0",
+	"docarray>=0.16.4",
+	"jina-hubble-sdk",
+	"jcloud>=0.0.35",
+	"opentelemetry-api>=1.12.0",
+	"opentelemetry-instrumentation-grpc>=0.35b0",
+	"pydantic<3.0.0",
+	"urllib3>=2.0.0,<3.0.0",
+	# perf
+	"uvloop; platform_system != \"Windows\"",
+	"prometheus_client>=0.12.0",
+	"opentelemetry-sdk>=1.14.0",
+	"opentelemetry-exporter-otlp>=1.12.0",
+	"opentelemetry-exporter-prometheus>=0.33b0",
+	"opentelemetry-instrumentation-aiohttp-client>=0.33b0",
+	"opentelemetry-instrumentation-fastapi>=0.33b0",
+	"opentelemetry-exporter-otlp-proto-grpc>=1.13.0",
+	# standard
+	"fastapi>=0.76.0",
+	"uvicorn<=0.23.1",
+	"docker",
+	"pathspec",
+	"filelock",
+	"requests",
+	"websockets",
+	"python-multipart",
+	"aiofiles",
+	"aiohttp",
+]
+
+[project.urls]
+Documentation = "https://jina.ai/serve"
+Source = "https://github.com/jina-ai/jina/"
+Tracker = "https://github.com/jina-ai/jina/issues"
+
+[project.scripts]
+jina = "jina_cli:main"
+
+[project.optional-dependencies]
+core = [
+	"numpy",
+	"protobuf>=3.19.0",
+	"grpcio>=1.46.0,<=1.73.1",
+	"grpcio-reflection>=1.46.0,<=1.73.1",
+	"grpcio-health-checking>=1.46.0,<=1.73.1",
+	"pyyaml>=5.3.1",
+	"packaging>=20.0",
+	"docarray>=0.16.4",
+	"jina-hubble-sdk",
+	"jcloud>=0.0.35",
+	"opentelemetry-api>=1.12.0",
+	"opentelemetry-instrumentation-grpc>=0.35b0",
+	"pydantic<3.0.0",
+	"urllib3>=2.0.0,<3.0.0",
+]
+perf = [
+	"uvloop; platform_system != \"Windows\"",
+	"prometheus_client>=0.12.0",
+	"opentelemetry-sdk>=1.14.0",
+	"opentelemetry-exporter-otlp>=1.12.0",
+	"opentelemetry-exporter-prometheus>=0.33b0",
+	"opentelemetry-instrumentation-aiohttp-client>=0.33b0",
+	"opentelemetry-instrumentation-fastapi>=0.33b0",
+	"opentelemetry-exporter-otlp-proto-grpc>=1.13.0",
+]
+standard = [
+	"uvloop; platform_system != \"Windows\"",
+	"prometheus_client>=0.12.0",
+	"opentelemetry-sdk>=1.14.0",
+	"opentelemetry-exporter-otlp>=1.12.0",
+	"opentelemetry-exporter-prometheus>=0.33b0",
+	"opentelemetry-instrumentation-aiohttp-client>=0.33b0",
+	"opentelemetry-instrumentation-fastapi>=0.33b0",
+	"fastapi>=0.76.0",
+	"uvicorn<=0.23.1",
+	"docker",
+	"pathspec",
+	"filelock",
+	"requests",
+	"websockets",
+	"python-multipart",
+	"aiofiles",
+	"aiohttp",
+]
+devel = [
+	"uvloop; platform_system != \"Windows\"",
+	"prometheus_client>=0.12.0",
+	"opentelemetry-sdk>=1.14.0",
+	"opentelemetry-exporter-otlp>=1.12.0",
+	"opentelemetry-exporter-prometheus>=0.33b0",
+	"opentelemetry-instrumentation-aiohttp-client>=0.33b0",
+	"opentelemetry-instrumentation-fastapi>=0.33b0",
+	"opentelemetry-exporter-otlp-proto-grpc>=1.13.0",
+	"fastapi>=0.76.0",
+	"uvicorn<=0.23.1",
+	"docker",
+	"pathspec",
+	"filelock",
+	"requests",
+	"websockets",
+	"python-multipart",
+	"aiofiles",
+	"aiohttp",
+	"strawberry-graphql>=0.96.0",
+	"sgqlc",
+	"watchfiles>=0.18.0",
+]
+test = [
+	"scipy>=1.6.1",
+	"Pillow",
+	"pytest<8.0.0",
+	"pytest-timeout",
+	"pytest-mock",
+	"pytest-cov==3.0.0",
+	"coverage==6.2",
+	"pytest-repeat",
+	"pytest-asyncio<0.23.0",
+	"pytest-reraise",
+	"flaky",
+	"mock",
+	"requests-mock",
+	"pytest-custom_exit_code",
+	"black==24.3.0",
+	"kubernetes>=18.20.0,<31.0.0",
+	"pytest-kind==22.11.1",
+	"pytest-lazy-fixture",
+	"psutil",
+	"opentelemetry-test-utils>=0.33b0",
+	"prometheus-api-client>=0.5.1",
+]
+cicd = [
+	"torch",
+	"strawberry-graphql>=0.96.0",
+	"sgqlc",
+	"bs4",
+	"jsonschema",
+	"portforward>=0.2.4,<0.4.3",
+	"tensorflow>=2.0",
+]
+all = [
+	"numpy",
+	"protobuf>=3.19.0",
+	"grpcio>=1.46.0,<=1.73.1",
+	"grpcio-reflection>=1.46.0,<=1.73.1",
+	"grpcio-health-checking>=1.46.0,<=1.73.1",
+	"pyyaml>=5.3.1",
+	"packaging>=20.0",
+	"docarray>=0.16.4",
+	"jina-hubble-sdk",
+	"jcloud>=0.0.35",
+	"opentelemetry-api>=1.12.0",
+	"opentelemetry-instrumentation-grpc>=0.35b0",
+	"pydantic<3.0.0",
+	"urllib3>=2.0.0,<3.0.0",
+	"uvloop; platform_system != \"Windows\"",
+	"prometheus_client>=0.12.0",
+	"opentelemetry-sdk>=1.14.0",
+	"opentelemetry-exporter-otlp>=1.12.0",
+	"opentelemetry-exporter-prometheus>=0.33b0",
+	"opentelemetry-instrumentation-aiohttp-client>=0.33b0",
+	"opentelemetry-instrumentation-fastapi>=0.33b0",
+	"opentelemetry-exporter-otlp-proto-grpc>=1.13.0",
+	"fastapi>=0.76.0",
+	"uvicorn<=0.23.1",
+	"docker",
+	"pathspec",
+	"filelock",
+	"requests",
+	"websockets",
+	"python-multipart",
+	"aiofiles",
+	"aiohttp",
+	"scipy>=1.6.1",
+	"Pillow",
+	"pytest<8.0.0",
+	"pytest-timeout",
+	"pytest-mock",
+	"pytest-cov==3.0.0",
+	"coverage==6.2",
+	"pytest-repeat",
+	"pytest-asyncio<0.23.0",
+	"pytest-reraise",
+	"flaky",
+	"mock",
+	"requests-mock",
+	"pytest-custom_exit_code",
+	"black==24.3.0",
+	"kubernetes>=18.20.0,<31.0.0",
+	"pytest-kind==22.11.1",
+	"pytest-lazy-fixture",
+	"psutil",
+	"opentelemetry-test-utils>=0.33b0",
+	"prometheus-api-client>=0.5.1",
+	"torch",
+	"strawberry-graphql>=0.96.0",
+	"sgqlc",
+	"bs4",
+	"jsonschema",
+	"portforward>=0.2.4,<0.4.3",
+	"tensorflow>=2.0",
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = { attr = "jina.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["jina*", "jina_cli*"]
