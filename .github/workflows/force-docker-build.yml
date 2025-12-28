@@ -41,7 +41,7 @@ jobs:
           fetch-depth: 100
       - name: Set envs and versions
         run: |
-          DEFAULT_PY_VERSION="3.8"
+          DEFAULT_PY_VERSION="3.9"
           VCS_REF=${{ github.ref }}
           echo "VCS_REF=$VCS_REF" >> $GITHUB_ENV
           echo "Will build $VCS_REF"
