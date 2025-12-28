@@ -292,9 +292,6 @@ jobs:
         include:
           # linux
           - os: ubuntu-latest
-            python: '3.8'
-            python-manylinux-tag: "cp38-cp38"
-          - os: ubuntu-latest
             python: '3.9'
             python-manylinux-tag: "cp39-cp39"
           - os: ubuntu-latest
@@ -303,6 +300,9 @@ jobs:
           - os: ubuntu-latest
             python: '3.11'
             python-manylinux-tag: "cp311-cp311"
+          - os: ubuntu-latest
+            python: '3.11'
+            python-manylinux-tag: "cp312-cp312"
 
           # MacOS emulated
           - os: macos-latest
